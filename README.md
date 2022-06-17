@@ -101,10 +101,17 @@ INTO CustomersOrderBackup2017
 FROM Customers
 LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
 ```
+SQL INSERT INTO SELECT 
 
 
-
-
+Over 
+PARTITION BY defines the groups into which the rows are divided
+```
+SELECT sale_day, sale_time,
+       branch, article, quantity, revenue,
+       SUM(quantity) OVER (PARTITION BY article) AS total_units_sold
+FROM   sales
+```
 
 
 
