@@ -31,11 +31,12 @@ ORDER BY A.City;
 ```
 Inner Join
 Then, we can create the following SQL statement (that contains an INNER JOIN), that selects records that have matching values in both tables:
+(2 ways of defining)
 ```
 SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
 FROM Orders
-INNER JOIN Customers
-ON Orders.CustomerID=Customers.CustomerID;
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
 SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName
 FROM ((Orders
 INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)
@@ -43,8 +44,7 @@ INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID);
 ```
 SQL LEFT JOIN
 ```
-SELECT Customers.CustomerName, Orders.OrderID
-FROM Customers
+SELECT Customers.CustomerName, Orders.OrderID FROM Customers
 LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
 ORDER BY Customers.CustomerName;
 ```
