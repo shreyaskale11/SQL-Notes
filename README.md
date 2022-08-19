@@ -114,7 +114,11 @@ FROM   sales
 ```
 
 
-
+alter table
+```
+#ALTER TABLE s1.global_funding  DROP COLUMN id 
+#ALTER TABLE s1.global_funding ADD id INT PRIMARY KEY AUTO_INCREMENT;
+```
 
 
 
